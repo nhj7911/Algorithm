@@ -47,7 +47,7 @@ int main(void)
         if (!strcmp(cmd, "push")) {
             int x; cin >> x;
             push(x);
-            cout << x << endl;
+            // cout << x << endl; // push는 출력x
         }
         else if (!strcmp(cmd, "pop")) {
             cout << pop() << endl;
