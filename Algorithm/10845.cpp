@@ -1,15 +1,15 @@
 /*
-10828_2.cpp
-백준 10828번 스택문제
-스택 라이브러리 이용
+10845.cpp
+백준 10845번 큐문제
+큐 라이브러리 이용
 version 1.0
-data 2020.04.21
+data 2020.04.22
 */
 
 #include "pch.h"
 #include <iostream>
 #include <string>
-#include <stack>
+#include <queue>
 using namespace std;
 
 int main(void)
@@ -18,8 +18,7 @@ int main(void)
     int n; // 주어지는 명령의 수
     cin >> n;
 
-    stack<int> s;
-    //char cmd[10];
+    queue<int> q;
     string str;
 
     for (int i = 0; i < n; i++) {
@@ -27,32 +26,40 @@ int main(void)
 
         if (str == "push") {
             int x; cin >> x;
-            s.push(x);
+            q.push(x);
         }
         else if (str == "pop") {
-            if (!s.empty())
+            if (!q.empty())
             {
-                cout << s.top() << endl;
-                s.pop();
+                cout << q.front() << endl;
+                q.pop();
             }
             else {
                 cout << "-1" << endl;
             }
         }
-        else if (str=="size") {
-            cout << s.size() << endl;
+        else if (str == "size") {
+            cout << q.size() << endl;
         }
         else if (str == "empty") {
-            if (s.empty()) {
+            if (q.empty()) {
                 cout << "1" << endl;
             }
             else {
                 cout << "0" << endl;
             }
         }
-        else if (str == "top") {
-            if (!s.empty()) {
-                cout << s.top() << endl;
+        else if (str == "front") {
+            if (!q.empty()) {
+                cout << q.front() << endl;
+            }
+            else {
+                cout << "-1" << endl;
+            }
+        }
+        else if (str == "back") {
+            if (!q.empty()) {
+                cout << q.back() << endl;
             }
             else {
                 cout << "-1" << endl;
